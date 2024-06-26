@@ -6,7 +6,7 @@ const app = express()
 app.use(express.json())
 
 app.post('/usuarios', async (req, res)=> {
-  /*console.log(req.body)*/
+  /*console.log(req.body) teste*/
 await prisma.user.create({
   data:{
     email: req.body.email,
