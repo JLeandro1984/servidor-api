@@ -1,9 +1,16 @@
 import express from 'express'
+import cors from 'cors'
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient();
 
 const app = express()
 app.use(express.json())
+
+/*'habilita qual página pode acessar seu ambiente, 
+para ter segurança, se deixar como "cors()", qualquer um pode ter 
+acesso, sendo inseguro, como é teste vamos deixar liberado'*/
+app.use(cors()) 
+
 
 app.post('/usuarios', async (req, res)=> {
   /*console.log(req.body) teste*/
